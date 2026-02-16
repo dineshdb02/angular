@@ -1,0 +1,23 @@
+<form [formGroup]="profileform">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" id="name" placeholder="enter the name" formControlName="name" required />
+    </div>
+    
+    <div>
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="enter your email" formControlName="email" required />
+    </div>
+
+    <div>
+
+        <label for="phone">Phone: </label>
+        <input type="number" id="phone" placeholder="enter your number" formControlName="phone" required />
+    </div>
+    <div>
+        <label for ="password">Password</label>
+        <input type="password"  appPasswordDir placeholder="enter your number"/>
+
+    
+    <button type="submit">Submit</button>
