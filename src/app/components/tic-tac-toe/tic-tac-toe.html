@@ -1,0 +1,52 @@
+<!-- <div *ngIf="state$ | async as state">
+
+  <h2 *ngIf="!state.winner">
+    Current Player: {{ state.currentPlayer }}
+  </h2>
+
+  <h2 *ngIf="state.winner">
+    Winner: {{ state.winner }} 🎉
+  </h2>
+
+  <div class="board">
+    <div
+      class="cell"
+      *ngFor="let cell of state.board; let i = index"
+      (click)="move(i)"
+    >
+      {{ cell }}
+    </div>
+  </div>
+
+  <button (click)="reset()">Reset Game</button>
+
+</div> -->
+
+
+<div *ngIf="state$ | async as state" class="game-container">
+
+  <h2 *ngIf="!state.winner">
+    Current Player: {{ state.currentPlayer }}
+  </h2>
+
+  <h2 *ngIf="state.winner">
+    Winner: {{ state.winner }} 🎉
+  </h2>
+  <h2 *ngIf="state.draw">
+    Draw: {{ state.draw }} 🎉
+  </h2>
+
+  <div class="board">
+    <div
+      class="cell"
+      *ngFor="let cell of state.board; let i = index"
+      (click)="move(i)"
+      [ngClass]="cell.toLowerCase()"
+    >
+      {{ cell }}
+    </div>
+  </div>
+
+  <button (click)="reset()">Reset Game</button>
+
+</div>
